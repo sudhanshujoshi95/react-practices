@@ -1,8 +1,15 @@
 import './PlayButton.css';
+import { useState } from 'react';
 
 export default function PlayButton({message, children, onPlay, onPause}){
 
-    let playing = false;  //don't use this approach. [State management feature of react to be used in such a case].
+    //let playing = false;  //don't use this approach. [State management feature of react to be used in such a case].
+
+    //Implementing useState hook:-
+
+    const [playing, setPlaying] = useState(false);
+
+
     function handleClick(e){
         console.log(e);
         e.stopPropagation();
@@ -10,7 +17,7 @@ export default function PlayButton({message, children, onPlay, onPause}){
         if(playing) onPause();
         else onPlay();
 
-        playing = !playing;
+        setPlaying(!playing);
     }
 
     return(

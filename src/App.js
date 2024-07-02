@@ -2,12 +2,23 @@ import "./App.css";
 import Counter from "./Components/Counter";
 import PlayButton from "./Components/PlayButton";
 import Video from "./Components/video";
-import videos from "./data/data";
+import videoDB from "./data/data";
+import { useState } from "react";
 
 export default function App() {
+  const[videos, setVideos] = useState(videoDB);
   return (
     <div className="App" onClick={()=>console.log('App')}>
-      <div>Videos</div>
+      <div>
+        <button onClick={()=>{
+          setVideos([...videos, {
+            title:'Flutter Tutorials',
+            views:'1.5M',
+            time:'5 months ago',
+            verified:true,
+        }]);
+        }}>Add Video</button>
+      </div>
       {
         videos.map(video=>
         <Video 
