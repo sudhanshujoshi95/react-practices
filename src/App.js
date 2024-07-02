@@ -1,4 +1,5 @@
 import "./App.css";
+import Counter from "./Components/Counter";
 import PlayButton from "./Components/PlayButton";
 import Video from "./Components/video";
 import videos from "./data/data";
@@ -29,6 +30,8 @@ export default function App() {
       {/* <PlayButton message='play-button' onPlay={()=>console.log('Play')} onPause={()=>console.log('Pause')}>Play</PlayButton>   */}
       {/* <PlayButton message='pause-button' onSmash={()=>alert('Pause')}>Pause</PlayButton> */}
       </div>
+
+      <Counter/>
 
     </div>
   );
